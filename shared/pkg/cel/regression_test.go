@@ -1,6 +1,7 @@
 package cel
 
 import (
+	"runtime/debug"
 	"testing"
 	"time"
 
@@ -19,7 +20,7 @@ import (
 // 2. A hash change means existing bucket_ids in the database will no longer match
 // 3. This requires a data migration strategy before upgrading
 //
-// Current cel-go version: 0.26.1
+// Current cel-go version: 0.31.0
 
 // GoldenBucketKey represents a known input/output pair for regression testing.
 type GoldenBucketKey struct {
@@ -30,7 +31,8 @@ type GoldenBucketKey struct {
 }
 
 // goldenBucketKeys contains pre-computed bucket_key results that must remain stable.
-// These values were computed with cel-go v0.26.1 and MUST NOT change across versions.
+// These values were computed with cel-go v0.26.1 and re-verified unchanged through
+// v0.31.0. They MUST NOT change across versions.
 var goldenBucketKeys = []GoldenBucketKey{
 	{
 		Name:       "single_attribute_region_US",
@@ -244,13 +246,25 @@ func TestValidationExpressionRegressionStability(t *testing.T) {
 	}
 }
 
-// TestCELVersionConstant verifies that the CELVersion constant is set correctly.
-// This test should be updated when upgrading cel-go.
+// TestCELVersionConstant verifies that the CELVersion constant tracks the cel-go
+// version actually linked into the build. Reading the version from build info
+// rather than a second literal means a `go get -u` that moves cel-go fails here
+// instead of silently backdating the provenance recorded in this file.
 func TestCELVersionConstant(t *testing.T) {
-	// This should match the version in go.mod
-	assert.Equal(t, "0.26.1", CELVersion, "CELVersion constant should match go.mod")
+	info, ok := debug.ReadBuildInfo()
+	require.True(t, ok, "build info unavailable")
 
-	// Log for audit trail
-	t.Logf("Tested against CEL version: %s", CELVersion)
-	t.Logf("If upgrading cel-go, run all regression tests first!")
+	for _, dep := range info.Deps {
+		if dep.Path == "github.com/google/cel-go" {
+			assert.Equal(t, "v"+CELVersion, dep.Version,
+				"CELVersion must match the cel-go version in go.mod")
+
+			// Log for audit trail
+			t.Logf("Tested against CEL version: %s", CELVersion)
+			t.Logf("If upgrading cel-go, run all regression tests first!")
+			return
+		}
+	}
+
+	t.Fatal("github.com/google/cel-go not found in build info")
 }

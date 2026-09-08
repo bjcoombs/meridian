@@ -59,7 +59,7 @@ jobs:
             - CURRENT_DATE: ${{ steps.date.outputs.current_date }}
 
             Context:
-            - Go 1.26.8 is the pinned baseline across go.mod, the Dockerfiles and
+            - Go 1.27.1 is the pinned baseline across go.mod, the Dockerfiles and
               the workflows. It is a real release - do not claim otherwise. A
               considered case for moving the baseline is welcome; a bare
               observation that a newer minor exists is not.

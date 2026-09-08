@@ -9,11 +9,6 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestCELVersion(t *testing.T) {
-	// CELVersion should match what's in go.mod
-	assert.Equal(t, "0.26.1", CELVersion)
-}
-
 func TestNewCompiler(t *testing.T) {
 	c, err := NewCompiler()
 	require.NoError(t, err)

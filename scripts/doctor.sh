@@ -241,7 +241,7 @@ install_tool() {
 }
 
 # Compare an installed version against a required minimum.
-# Only concrete minimums are enforced ("1.26.8+"); family patterns ("2.x+", "3.x+")
+# Only concrete minimums are enforced ("1.27.1+"); family patterns ("2.x+", "3.x+")
 # name a major line rather than a floor, so they are accepted as-is.
 # Returns 0 when the requirement is met or is not comparable.
 version_meets_minimum() {
@@ -643,7 +643,7 @@ echo " Core Development Tools"
 echo "═══════════════════════════════════════"
 echo ""
 
-check_tool "go" "1.26.8+" || true
+check_tool "go" "1.27.1+" || true
 check_go_environment || true
 echo ""
 
