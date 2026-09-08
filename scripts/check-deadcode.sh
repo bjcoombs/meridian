@@ -17,7 +17,13 @@ set -euo pipefail
 
 # Maximum number of unreachable functions allowed (ratchet - lower as dead code
 # is removed). Tracked in assess-2026-05-22.
-BASELINE=87
+#
+# Re-anchored from 87 to 76 when deadcode moved from v0.45.0 to the post-v0.49.0
+# pseudo-version pinned in quality.yml (every tag up to v0.49.0 panics in
+# callgraph/rta under Go 1.27). The rta fix changed what the analysis reaches;
+# no Go functions were removed. Leaving 87 against the new analyzer would have
+# carried 11 functions of slack, letting genuinely-new dead code land unnoticed.
+BASELINE=76
 
 cd "$(git rev-parse --show-toplevel)" || exit 1
 
