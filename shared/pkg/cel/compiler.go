@@ -21,7 +21,7 @@ import (
 // CELVersion is the pinned version of cel-go used in this package.
 // This version must match the version in go.mod to ensure consistent behavior.
 // See https://github.com/google/cel-go/releases for release notes.
-const CELVersion = "0.26.1"
+const CELVersion = "0.31.0"
 
 // Security constraints for CEL expressions.
 const (
