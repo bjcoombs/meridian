@@ -9,7 +9,7 @@ require (
 	connectrpc.com/connect v1.20.0
 	connectrpc.com/vanguard v0.4.0
 	github.com/DATA-DOG/go-sqlmock v1.5.2
-	github.com/alicebob/miniredis/v2 v2.38.0
+	github.com/alicebob/miniredis/v2 v2.39.0
 	github.com/anthropics/anthropic-sdk-go v1.70.1
 	github.com/bits-and-blooms/bloom/v3 v3.7.1
 	github.com/bsm/redislock v0.10.0
@@ -39,9 +39,9 @@ require (
 	github.com/stripe/stripe-go/v82 v82.5.1
 	github.com/testcontainers/testcontainers-go v0.44.0
 	github.com/testcontainers/testcontainers-go/modules/cockroachdb v0.44.0
-	github.com/testcontainers/testcontainers-go/modules/kafka v0.43.0
+	github.com/testcontainers/testcontainers-go/modules/kafka v0.44.0
 	github.com/testcontainers/testcontainers-go/modules/postgres v0.44.0
-	github.com/testcontainers/testcontainers-go/modules/redis v0.43.0
+	github.com/testcontainers/testcontainers-go/modules/redis v0.44.0
 	github.com/tidwall/gjson v1.19.0
 	github.com/tidwall/sjson v1.2.5
 	github.com/twmb/franz-go v1.21.6

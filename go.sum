@@ -78,8 +78,8 @@ github.com/Microsoft/go-winio v0.6.2 h1:F2VQgta7ecxGYO8k3ZZz3RS8fVIXVxONVUPlNERo
 github.com/Microsoft/go-winio v0.6.2/go.mod h1:yd8OoFMLzJbo9gZq8j5qaps8bJ9aShtEA8Ipt1oGCvU=
 github.com/alexbrainman/sspi v0.0.0-20250919150558-7d374ff0d59e h1:4dAU9FXIyQktpoUAgOJK3OTFc/xug0PCXYCqU0FgDKI=
 github.com/alexbrainman/sspi v0.0.0-20250919150558-7d374ff0d59e/go.mod h1:cEWa1LVoE5KvSD9ONXsZrj0z6KqySlCCNKHlLzbqAt4=
-github.com/alicebob/miniredis/v2 v2.38.0 h1:nZAzCR+Lj+Vxk4ZXzm2NuKq2O33RXj1XxJ2e2uP9jiw=
-github.com/alicebob/miniredis/v2 v2.38.0/go.mod h1:TcL7YfarKPGDAthEtl5NBeHZfeUQj6OXMm/+iu5cLMM=
+github.com/alicebob/miniredis/v2 v2.39.0 h1:M7WbmV5BmV56L8KTG0rw6vEQ+woTOghpDgin2xv4A0g=
+github.com/alicebob/miniredis/v2 v2.39.0/go.mod h1:TcL7YfarKPGDAthEtl5NBeHZfeUQj6OXMm/+iu5cLMM=
 github.com/anthropics/anthropic-sdk-go v1.70.1 h1:InqcCGA5MFz7co8pQVKTUYQXUunIKDUkrdyckqF/Mec=
 github.com/anthropics/anthropic-sdk-go v1.70.1/go.mod h1:x+lPk/cCl48uRegeP0hlYYBN1b7bEBTveInIMgLicnY=
 github.com/antlr4-go/antlr/v4 v4.13.1 h1:SqQKkuVZ+zWkMMNkjy5FZe5mr5WURWnlpmOuzYWrPrQ=
@@ -468,12 +468,12 @@ github.com/testcontainers/testcontainers-go v0.44.0 h1:/Fwh6HY1mIikhnm9e7HwoxGyc
 github.com/testcontainers/testcontainers-go v0.44.0/go.mod h1:IcnwQrYTO86xHXu5bvMaBH7ATlbS3Qn1M1QWW3c66rE=
 github.com/testcontainers/testcontainers-go/modules/cockroachdb v0.44.0 h1:ghehzNawCG2WUvg6u2tCzHIzsk/uOmleoi5izDKp1DI=
 github.com/testcontainers/testcontainers-go/modules/cockroachdb v0.44.0/go.mod h1:r0sgLxlpK7wGO95cbdRf6N6pGvfoaJFjz4m5q/TYuqI=
-github.com/testcontainers/testcontainers-go/modules/kafka v0.43.0 h1:m9/gBKYmYfOuZ+2yUxPcAvyKSDoJjJRLtjD6u+m5kgo=
-github.com/testcontainers/testcontainers-go/modules/kafka v0.43.0/go.mod h1:iS7LQrOG4GG8b0L1U1sf/CltP5e2h6CNJjBTn+mmUac=
+github.com/testcontainers/testcontainers-go/modules/kafka v0.44.0 h1:KOyj22XaB0X2RsyQKQKthzcWObKtni0kLrV1HqFVeec=
+github.com/testcontainers/testcontainers-go/modules/kafka v0.44.0/go.mod h1:OP4szEj4BpOH/UZhbtNER1ERRSj4YJ6hu2x+FIBdo5o=
 github.com/testcontainers/testcontainers-go/modules/postgres v0.44.0 h1:8fdv/9y3JMxjQ+ULAcOG8RtgeNu5t9XF9LolSXDuTwM=
 github.com/testcontainers/testcontainers-go/modules/postgres v0.44.0/go.mod h1:CFr2LncGYokw+OKjXcr8ARCKG1SaC2UEnGxFBovE86g=
-github.com/testcontainers/testcontainers-go/modules/redis v0.43.0 h1:qzATMhrltLr07KcGl/d674ouqI0AFtf6wnQb3VnqP7M=
-github.com/testcontainers/testcontainers-go/modules/redis v0.43.0/go.mod h1:ygEcEUIZzmIlOKpjBfnPn/lUIRNorr1kPj3XfFPTQXM=
+github.com/testcontainers/testcontainers-go/modules/redis v0.44.0 h1:43EH7N6yB5B2tY/9uhPit487tMLm5iQiyKQaXWXNbnk=
+github.com/testcontainers/testcontainers-go/modules/redis v0.44.0/go.mod h1:k4nnCSzm3z8yRMBKBn3rhsllbFjjhVn/2JjWNxxArg8=
 github.com/tidwall/gjson v1.14.2/go.mod h1:/wbyibRr2FHMks5tjHJ5F8dMZh3AcwJEMf5vlfC0lxk=
 github.com/tidwall/gjson v1.19.0 h1:xwxm7n691Uf3u5OFjzngavjGTh55KX5q/9w9xHW88JU=
 github.com/tidwall/gjson v1.19.0/go.mod h1:V37/opeE/JbLUOfH0QTXiNez2l0RUjYUhpT4szFQAfc=

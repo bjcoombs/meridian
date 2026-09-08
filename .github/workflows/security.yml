@@ -46,14 +46,10 @@ jobs:
       run: |
         set -euo pipefail
         go install golang.org/x/vuln/cmd/govulncheck@latest
-        # Known false positives - see ADR-0036 for context.
+        # Known false positive - see ADR-0036 for context.
         # GO-2024-2476: Dex TLS config discarding. Not applicable because
         # embedded Dex serves HTTP behind the gateway (Caddy terminates TLS).
-        # GO-2026-4883: Docker/Moby plugin privilege off-by-one. No fix available.
-        # Only reachable via testcontainers in tests, not production code paths.
-        # GO-2026-4887: Docker/Moby AuthZ plugin bypass with oversized request bodies.
-        # No fix available. Only reachable via testcontainers in tests, not production.
-        GOVULN_ALLOWLIST="$(printf '%s\n' GO-2024-2476 GO-2026-4883 GO-2026-4887)"
+        GOVULN_ALLOWLIST="$(printf '%s\n' GO-2024-2476)"
 
         govulncheck ./... 2>&1 | tee /tmp/govulncheck.out || true
         GOVULN_RC=${PIPESTATUS[0]:-$?}
@@ -71,7 +67,7 @@ jobs:
             echo "::error::Non-allowlisted vulnerabilities detected: $NON_ALLOWLISTED"
             exit 1
           fi
-          echo "::warning::Suppressed allowlisted false positive(s) (Dex, Docker/Moby) — see ADR-0036"
+          echo "::warning::Suppressed allowlisted false positive (Dex) — see ADR-0036"
         fi
 
   gosec:
@@ -118,7 +114,7 @@ jobs:
         fi
 
     - name: Upload Gosec results to GitHub Security tab
-      uses: github/codeql-action/upload-sarif@v4.37.4
+      uses: github/codeql-action/upload-sarif@v4.37.9
       if: always()
       with:
         sarif_file: gosec-results.sarif
@@ -147,7 +143,7 @@ jobs:
         TRIVY_IGNOREFILE: '.trivyignore'
 
     - name: Upload Trivy results to GitHub Security tab
-      uses: github/codeql-action/upload-sarif@v4.37.4
+      uses: github/codeql-action/upload-sarif@v4.37.9
       if: always()
       with:
         sarif_file: 'trivy-repo-results.sarif'
@@ -190,7 +186,7 @@ jobs:
         exit-code: '1'  # Fail on critical/high vulnerabilities with available fixes
 
     - name: Upload Trivy image results to GitHub Security tab
-      uses: github/codeql-action/upload-sarif@v4.37.4
+      uses: github/codeql-action/upload-sarif@v4.37.9
       if: always()
       with:
         sarif_file: 'trivy-image-results.sarif'
